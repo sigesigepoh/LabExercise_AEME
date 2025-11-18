@@ -1,0 +1,40 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Contact</title>
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+		<header class="site-header">
+			<div class="container">
+				<h1>My Site</h1>
+				<nav>
+					<a href="/">Home</a>
+					<a href="/about/">About</a>
+					<a href="/contact/">Contact</a>
+					{% if user.is_authenticated %}
+						<span style="margin-left:12px;color:var(--muted)">Hi, {{ user.username }}</span>
+						<a href="/logout/">Logout</a>
+					{% else %}
+						<a href="/login/">Login</a>
+					{% endif %}
+				</nav>
+			</div>
+		</header>
+
+	<main class="container">
+		<section class="card">
+			<h2>Contact Us</h2>
+			<p>Email: <a href="mailto:example@gmail.com">example@gmail.com</a></p>
+			<p>Phone: 123-456-7890</p>
+		</section>
+	</main>
+
+	<footer class="site-footer container">
+		<p>&copy; 2025 My Site</p>
+	</footer>
+</body>
+</html>
