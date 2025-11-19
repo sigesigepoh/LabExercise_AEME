@@ -12,22 +12,16 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-q2sh*j@^xwj!m4!$028&!(2$xegc&n4&!7x2#=r&x@xxd7_3hp'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# Allow localhost addresses while in development (DEBUG=True)
 if DEBUG:
     ALLOWED_HOSTS += ["127.0.0.1", "localhost"]
 
@@ -60,8 +54,7 @@ ROOT_URLCONF = 'homepageAEME.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # Project-level templates folder and the inner package where your
-        # HTML files currently live
+    
         'DIRS': [BASE_DIR / "templates", BASE_DIR / "homepageAEME"],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -79,8 +72,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'homepageAEME.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+
 
 DATABASES = {
     'default': {
@@ -90,8 +82,6 @@ DATABASES = {
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -108,10 +98,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/5.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -121,21 +107,13 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
-
 STATIC_URL = 'static/'
 
-# During development, look for static files in common locations.
-# Your workspace contains `static/` at the repository root and may also
-# contain a `static/` next to manage.py (BASE_DIR). Include both paths
-# so Django finds the CSS regardless of where it lives.
+
 STATICFILES_DIRS = [
     BASE_DIR / "static",
     BASE_DIR.parent / "static",
 ]
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
